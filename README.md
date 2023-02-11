@@ -10,3 +10,5 @@ The game lasts 10 rounds and for each valid response, 1 point is added. When the
 
 At the end of the game, the final score is indicated and the game can be restarted.
 
+
+<img width="383" alt="image" src="https://user-images.githubusercontent.com/13105821/218259728-0a332934-4e14-4c9a-9757-71fb2c168f47.png">
