@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
@@ -19,12 +20,22 @@ class ViewController: UIViewController {
     var askQuestionCounter = 0
     var selectedFlag = ""
     
+    @objc func showScore() {
+        let alert = UIAlertController(title: "Score", message: "Your score is \(score)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
-        button1.layer.borderWidth = 1
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .plain, target: self, action: #selector(showScore))
+
+        
+       /*  button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
         
@@ -35,7 +46,7 @@ class ViewController: UIViewController {
         
         button1.layer.borderColor = UIColor.lightGray.cgColor
         button2.layer.borderColor = UIColor.lightGray.cgColor
-        button3.layer.borderColor = UIColor.lightGray.cgColor
+        button3.layer.borderColor = UIColor.lightGray.cgColor */
 
 
         askQuestion(action: nil)
@@ -53,8 +64,11 @@ class ViewController: UIViewController {
                     self.score = 0
                     self.askQuestion(action: nil)
                 })
+            
+            
                 alert.addAction(action)
                 present(alert, animated: true, completion: nil)
+            
                 return
             }
         
